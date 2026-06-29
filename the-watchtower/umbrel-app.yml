@@ -17,11 +17,11 @@ releaseNotes: >-
   endpoint for notifications.
 
 developer: 21mCom
-website: https://github.com/21mCom/watchtower
+website: https://github.com/21mCom/TheWatchTower
 dependencies:
   - electrs
-repo: https://github.com/21mCom/watchtower
-support: https://github.com/21mCom/watchtower/issues
+repo: https://github.com/21mCom/TheWatchTower
+support: https://github.com/21mCom/TheWatchTower/issues
 port: 3000
 gallery:
   - 1.jpg
