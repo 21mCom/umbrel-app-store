@@ -3,7 +3,7 @@ id: 21mcom-app-store-the-watchtower
 category: bitcoin
 name: The Watchtower
 icon: https://raw.githubusercontent.com/21mCom/umbrel-app-store/main/21mcom-app-store-the-watchtower/icon.png
-version: "1.0.0"
+version: "1.0.1"
 tagline: Monitor Bitcoin addresses via your own node
 description: >-
   The Watchtower connects directly to your Bitcoin node's Electrum server
@@ -13,10 +13,10 @@ description: >-
   alerts.
 
 releaseNotes: >-
-  Initial release. Supports P2PKH, P2SH, P2WPKH, P2WSH, and P2TR address
-  types. Alerts on mempool detection and block confirmation. Configurable XMPP
-  endpoint for notifications.
-
+    Bug fix: resolves an error that prevented the app from loading after install
+    ("column alert_template does not exist"). The address monitor now initializes
+    correctly, and existing installs are repaired automatically on update.
+  
 developer: 21mCom
 website: https://github.com/21mCom/TheWatchTower
 dependencies:
