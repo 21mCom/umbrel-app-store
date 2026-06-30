@@ -2,13 +2,14 @@ manifestVersion: 1
 id: 21mcom-app-store-the-watchtower
 category: bitcoin
 name: The Watchtower
+icon: https://raw.githubusercontent.com/21mCom/umbrel-app-store/main/21mcom-app-store-the-watchtower/icon.png
 version: "1.0.0"
 tagline: Monitor Bitcoin addresses via your own node
 description: >-
   The Watchtower connects directly to your Bitcoin node's Electrum server
   (Electrs or Fulcrum) and watches any addresses you choose. When coins move —
   whether hitting the mempool or getting confirmed — you get an XMPP message
-  instantly. No third-party APIs, no external data. Your node, your keys, your
+  instantly. No third-party APIs, no external data. Your node, your rules, your
   alerts.
 
 releaseNotes: >-
@@ -24,7 +25,7 @@ repo: https://github.com/21mCom/TheWatchTower
 support: https://github.com/21mCom/TheWatchTower/issues
 port: 3000
 gallery:
-  - 1.jpg
+  - https://raw.githubusercontent.com/21mCom/umbrel-app-store/main/21mcom-app-store-the-watchtower/1.jpg
 path: ""
 defaultUsername: ""
 defaultPassword: ""
