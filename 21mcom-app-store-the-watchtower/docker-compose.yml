@@ -1,0 +1,52 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      # The proxy forwards requests to the "web" service on port 3000
+      APP_HOST: web
+      APP_PORT: 3000
+      # Strip any client-supplied X-Forwarded-For before forwarding.
+      #
+      # proxy_set_header (not proxy_add_x_forwarded_for) overwrites XFF with
+      # the actual TCP remote address of the connecting client.  This prevents
+      # an attacker from injecting a forged IP address into XFF and thereby
+      # appearing as a different IP to Express's per-IP rate limiter.
+      #
+      # Express is configured with app.set('trust proxy', 1) which means it
+      # trusts exactly one upstream hop (this nginx proxy) and derives req.ip
+      # from the single XFF value that nginx sets here.  If nginx did not strip
+      # first, a client could prepend a forged address and trust proxy would
+      # hand that forged address to the rate limiter.
+      APP_NGINX_CONF: |
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Real-IP       $remote_addr;
+
+  web:
+    image: ghcr.io/21mcom/watchtower:1.0.0
+    restart: on-failure
+    stop_grace_period: 1m
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: postgresql://watchtower:watchtower@db:5432/watchtower
+    depends_on:
+      - db
+    networks:
+      - default
+
+  db:
+    image: postgres:16-alpine
+    restart: on-failure
+    stop_grace_period: 1m
+    environment:
+      POSTGRES_USER: watchtower
+      POSTGRES_PASSWORD: watchtower
+      POSTGRES_DB: watchtower
+    volumes:
+      - ${APP_DATA_DIR}/postgres:/var/lib/postgresql/data
+    networks:
+      - default
+
+networks:
+  default: {}
