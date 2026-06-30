@@ -23,7 +23,7 @@ services:
         proxy_set_header X-Real-IP       $remote_addr;
 
   web:
-    image: ghcr.io/21mcom/watchtower:1.0.1
+    image: ghcr.io/21mcom/watchtower:1.0.2
     restart: on-failure
     stop_grace_period: 1m
     environment:
