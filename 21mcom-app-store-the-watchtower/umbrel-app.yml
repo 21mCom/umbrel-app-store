@@ -3,7 +3,7 @@ id: 21mcom-app-store-the-watchtower
 category: bitcoin
 name: The Watchtower
 icon: https://raw.githubusercontent.com/21mCom/umbrel-app-store/main/21mcom-app-store-the-watchtower/icon.png
-version: "1.0.3"
+version: "1.0.4"
 tagline: Monitor Bitcoin addresses via your own node
 description: >-
   The Watchtower connects directly to your Bitcoin node's Electrum server
@@ -12,10 +12,8 @@ description: >-
   instantly. No third-party APIs, no external data. Your node, your rules, your
   alerts.
 releaseNotes: >-
-  Bug fix: resolves the "ECONNREFUSED" error page that could appear after
-  install or restart when the Electrum server was not yet reachable. The app
-  now starts and stays reachable immediately, and reconnects to your node
-  reliably in the background.
+  Fixes a blank page on first load: the web UI now renders correctly over your
+  Umbrel's local HTTP address. No configuration or data changes required.
 developer: 21mCom
 website: https://github.com/21mCom/TheWatchTower
 dependencies:
