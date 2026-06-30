@@ -14,11 +14,12 @@ description: >-
   alerts.
 
 releaseNotes: >-
-  Bug fix: resolves an error that prevented the app from loading after install
-  ("column alert_template does not exist"). The address monitor now initializes
-  correctly, and existing installs are repaired automatically on update.
+    Bug fix: resolves the "ECONNREFUSED" error page that could appear after
+    install or restart when the Electrum server was not yet reachable. The app
+    now starts and stays reachable immediately, and reconnects to your node
+    reliably in the background.
 
-developer: 21mCom
+  developer: 21mCom
 website: https://github.com/21mCom/TheWatchTower
 dependencies:
   - electrs
