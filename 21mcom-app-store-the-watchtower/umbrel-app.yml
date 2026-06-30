@@ -1,4 +1,3 @@
-
 manifestVersion: 1
 id: 21mcom-app-store-the-watchtower
 category: bitcoin
@@ -12,14 +11,12 @@ description: >-
   whether hitting the mempool or getting confirmed — you get an XMPP message
   instantly. No third-party APIs, no external data. Your node, your rules, your
   alerts.
-
 releaseNotes: >-
-    Bug fix: resolves the "ECONNREFUSED" error page that could appear after
-    install or restart when the Electrum server was not yet reachable. The app
-    now starts and stays reachable immediately, and reconnects to your node
-    reliably in the background.
-
-  developer: 21mCom
+  Bug fix: resolves the "ECONNREFUSED" error page that could appear after
+  install or restart when the Electrum server was not yet reachable. The app
+  now starts and stays reachable immediately, and reconnects to your node
+  reliably in the background.
+developer: 21mCom
 website: https://github.com/21mCom/TheWatchTower
 dependencies:
   - electrs
